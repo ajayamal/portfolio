@@ -1,0 +1,579 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "League Spartan", sans-serif;
+  --font-body: "Outfit", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&display=swap');
+
+/* =====================
+   ROOT VARIABLES
+   ===================== */
+:root {
+  /* Constant colors */
+  --neon-lime: #DFFF00;
+  --pure-white: #FFFFFF;
+  --grey: #888;
+
+  /* Theme-specific variables (Default: Light) */
+  --bg-primary: #F8F9F3;
+  /* Soft off-white with hint of lime */
+  --text-primary: #0C0C0C;
+  --text-muted: #7A8F00;
+  --accent: #0C0C0C;
+  /* In light mode, accent is black for contrast */
+  --card-bg-dark: #0C0C0C;
+  --card-bg-light: #FFFFFF;
+  --card-bg-lime: var(--neon-lime);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --nav-bg: rgba(248, 249, 243, 0.85);
+  --nav-text: #0C0C0C;
+  --pill-bg: rgba(0, 0, 0, 0.05);
+
+  --font-display: 'League Spartan', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+
+  --radius-card: 2.5rem;
+  --radius-pill: 100px;
+  --gap: 1.5rem;
+  --padding-card: 2.5rem;
+  --section-pad: 6rem 1.5rem;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #0C0C0C;
+  --text-primary: var(--neon-lime);
+  --text-muted: rgba(223, 255, 0, 0.4);
+  --accent: var(--neon-lime);
+  --card-bg-dark: #161616;
+  --card-bg-light: #1f1f1f;
+  --card-bg-lime: #242900;
+  /* Darker lime for dark mode cards */
+  --card-border: rgba(223, 255, 0, 0.1);
+  --nav-bg: rgba(12, 12, 12, 0.85);
+  --nav-text: var(--neon-lime);
+  --pill-bg: rgba(223, 255, 0, 0.1);
+}
+
+/* =====================
+   RESET
+   ===================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =====================
+   TYPOGRAPHY
+   ===================== */
+.display-1 {
+  font-size: clamp(3.2rem, 9vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+
+.display-2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0.92;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.text-outline {
+  -webkit-text-stroke: 2px currentColor;
+  color: transparent;
+}
+
+/* =====================
+   LAYOUT
+   ===================== */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: var(--section-pad);
+}
+
+/* =====================
+   BENTO GRID
+   ===================== */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+/* =====================
+   ACID CARD
+   ===================== */
+.acid-card {
+  border-radius: var(--radius-card);
+  padding: var(--padding-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.acid-card-dark {
+  background-color: var(--card-bg-dark);
+  color: var(--pure-white);
+}
+
+.acid-card-dark-2 {
+  background-color: var(--card-bg-light);
+  color: var(--text-primary);
+}
+
+.acid-card-white {
+  background-color: var(--card-bg-light);
+  color: var(--text-primary);
+}
+
+.acid-card-lime {
+  background-color: var(--card-bg-lime);
+  color: var(--text-primary);
+}
+
+.acid-card-outlined {
+  background-color: transparent;
+  border: 2px solid currentColor;
+}
+
+.acid-card:hover {
+  transform: translateY(-6px);
+}
+
+/* =====================
+   BUTTONS
+   ===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+}
+
+.btn-dark {
+  background: var(--navy-black);
+  color: var(--pure-white);
+}
+
+.btn-dark:hover {
+  background: #1f1f1f;
+  transform: translateY(-2px);
+}
+
+.btn-lime {
+  background: var(--neon-lime);
+  color: var(--navy-black);
+}
+
+.btn-lime:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(223, 255, 0, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================
+   SKILL PILL
+   ===================== */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* =====================
+   TIMELINE
+   ===================== */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: currentColor;
+  opacity: 0.12;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--neon-lime);
+  box-shadow: 0 0 0 3px currentColor;
+  outline-offset: 2px;
+}
+
+/* =====================
+   NAVBAR
+   ===================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.navbar.scrolled {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Mobile drawer */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* =====================
+   SECTION TITLES
+   ===================== */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+@media (max-width: 1024px) {
+
+  .col-8,
+  .col-7,
+  .col-6,
+  .col-5 {
+    grid-column: span 12;
+  }
+
+  .col-4,
+  .col-3 {
+    grid-column: span 6;
+  }
+
+  :root {
+    --padding-card: 2rem;
+    --radius-card: 2rem;
+    --gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .col-4,
+  .col-3 {
+    grid-column: span 12;
+  }
+
+  :root {
+    --padding-card: 1.5rem;
+    --radius-card: 1.5rem;
+    --gap: 0.75rem;
+  }
+
+  .display-1 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .bento-grid {
+    padding: 0.75rem;
+  }
+}
+
+/* =====================
+   SCROLLBAR
+   ===================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(12, 12, 12, 0.3);
+  border-radius: 100px;
+}
+
+::selection {
+  background-color: var(--navy-black);
+  color: var(--neon-lime);
+}
+
+/* =====================
+   ANIMATIONS
+   ===================== */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* =====================
+   PRINT STYLES (PDF)
+   ===================== */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  :root {
+    --section-pad: 1.5rem 1rem;
+    --padding-card: 1.5rem;
+    --radius-card: 1.5rem;
+    --gap: 1rem;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    zoom: 85%;
+    /* Slight zoom out to fit on one page */
+  }
+
+  .navbar,
+  footer,
+  .btn-lime,
+  .btn-outline,
+  .no-print,
+  [aria-label="Toggle theme"],
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  .min-h-screen,
+  section {
+    min-height: auto !important;
+    height: auto !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .bento-grid {
+    padding: 0 !important;
+    margin-bottom: 1rem !important;
+    gap: var(--gap) !important;
+  }
+
+  /* Flatten bento grid for print if needed, or keep 12-col if it fits */
+  .col-8,
+  .col-7,
+  .col-6,
+  .col-5,
+  .col-4,
+  .col-3 {
+    grid-column: span 12 !important;
+    /* Stack for better readability on A4 */
+  }
+
+  /* Force dark theme for print if user has it active, or just let variables handle it */
+  .acid-card {
+    break-inside: avoid;
+    transform: none !important;
+  }
+
+  .acid-card:hover {
+    transform: none !important;
+  }
+
+  /* Adjust display sizes for print */
+  .display-1 {
+    font-size: 3.5rem !important;
+  }
+
+  .display-2 {
+    font-size: 2rem !important;
+  }
+}
