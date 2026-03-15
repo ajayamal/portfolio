@@ -56,7 +56,7 @@ const projects = [
     {
         name: 'JustAct',
         desc: 'Built back-end services and APIs for JustAct, an online dispute resolution platform, facilitating scalable workflows.',
-        tech: 'Ruby on Rails · Node.js · ExpressJS',
+        tech: 'Ruby on Rails · React',
         link: 'https://justact.co.in/'
     }
 ];

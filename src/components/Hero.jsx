@@ -71,7 +71,7 @@ const Hero = () => {
                                 className="btn btn-outline"
                                 style={{ borderColor: 'var(--card-border)' }}
                             >
-                                RÉSUMÉ
+                                RESUME
                             </a>
                         </div>
 
