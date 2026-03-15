@@ -1,7 +1,8 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import BentoGrid from './components/BentoGrid';
+import Footer from './components/Footer';
 
 export const ThemeContext = createContext({ isDark: false, toggleTheme: () => { } });
 
@@ -27,17 +28,7 @@ const App = () => {
           <Hero />
           <BentoGrid />
         </main>
-        {/* <footer
-          className="py-12 px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 max-w-7xl mx-auto"
-          style={{ borderTop: '1px solid var(--card-border)' }}
-        >
-          <p className="font-display font-black uppercase text-lg tracking-tighter">
-            AJAY AMALA
-          </p>
-          <p className="font-body text-sm" style={{ color: 'var(--text-muted)' }}>
-            &copy; {new Date().getFullYear()} · BUILT WITH PASSION
-          </p>
-        </footer> */}
+        <Footer />
       </div>
     </ThemeContext.Provider>
   );

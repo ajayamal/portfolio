@@ -90,16 +90,13 @@ const Navbar = () => {
                             whileTap={{ scale: 0.95 }}
                             className="hidden md:flex items-center gap-3 px-6 py-2.5 rounded-full font-display font-black text-xs uppercase transition-colors no-print"
                             style={{
-                                backgroundColor: isDark ? '#DFFF00' : '#0C0C0C',
-                                color: isDark ? '#0C0C0C' : '#DFFF00',
-                                border: `1px solid ${isDark ? '#DFFF00' : '#0C0C0C'}`,
+                                color: isDark ? '#DFFF00' : '#0C0C0C',
                                 padding: "0.5rem 1rem",
                                 textDecoration: 'none'
                             }}
                         >
                             <FileDown size={14} />
                             <span>RESUME</span>
-                            <ChevronDown size={14} style={{ opacity: 0.6 }} />
                         </motion.a>
 
                         {/* Theme Toggle */}
@@ -179,16 +176,12 @@ const Navbar = () => {
                             }}
                             className="mt-4 flex items-center gap-3 px-8 py-4 rounded-2xl font-display font-black text-xl uppercase transition-colors"
                             style={{
-                                backgroundColor: isDark ? '#DFFF00' : '#0C0C0C',
-                                color: isDark ? '#0C0C0C' : '#DFFF00',
-                                border: `1px solid ${isDark ? '#DFFF00' : '#0C0C0C'}`,
-                                boxShadow: isDark ? '0 0 30px rgba(223, 255, 0, 0.3)' : '0 0 30px rgba(0, 0, 0, 0.15)',
+                                color: isDark ? '#DFFF00' : '#0C0C0C',
                                 textDecoration: 'none'
                             }}
                         >
                             <FileDown size={28} />
                             <span>RESUME</span>
-                            <ChevronRight size={24} style={{ opacity: 0.6 }} />
                         </motion.a>
                     </motion.div>
                 )}

@@ -44,7 +44,7 @@ const Hero = () => {
                     >
                         <h1 className="display-1" style={{ color: 'var(--text-primary)' }}>
                             FULL STACK<br />
-                            ENGINEER
+                            DEVELOPER
                         </h1>
                     </motion.div>
 
@@ -80,7 +80,7 @@ const Hero = () => {
                             {[
                                 { icon: <Github size={18} />, href: 'https://github.com/ajayamal', label: 'GitHub' },
                                 { icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/ajay-amal-95554912a', label: 'LinkedIn' },
-                                { icon: <Mail size={18} />, href: 'mailto:ajayamal@example.com', label: 'Email' },
+                                { icon: <Mail size={18} />, href: 'mailto:ajayamalprof@gmail.com', label: 'Email' },
                             ].map(s => (
                                 <a
                                     key={s.label}
@@ -143,7 +143,7 @@ const Hero = () => {
                     userSelect: 'none',
                     paddingRight: '1rem',
                 }}>
-                    ENGINEER
+                    DEVELOPER
                 </span>
             </div>
         </section>

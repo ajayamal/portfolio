@@ -95,11 +95,11 @@ const BentoGrid = () => {
                         FULL STACK<br />DEVELOPER
                     </h2>
                     <p style={{ fontFamily: 'var(--font-body)', fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: '440px' }}>
-                        I'm Ajay — a software engineer with 5+ years of experience delivering
+                        I'm Ajay — a software developer with 5+ years of experience delivering
                         robust, user-centric apps across fintech, web3, and enterprise domains.
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginTop: '2rem' }}>
-                        <a href="mailto:ajayamal@example.com" className="btn btn-lime">
+                        <a href="mailto:ajayamalprof@gmail.com" className="btn btn-lime">
                             HAVE A CHAT <Send size={16} />
                         </a>
                         <a
@@ -108,7 +108,7 @@ const BentoGrid = () => {
                             className="btn btn-outline"
                             style={{ borderColor: 'var(--card-border)' }}
                         >
-                            RÉSUMÉ <ExternalLink size={16} />
+                            Resume <ExternalLink size={16} />
                         </a>
                     </div>
                 </motion.div>
@@ -299,9 +299,9 @@ const BentoGrid = () => {
                                 }}>
                                     {group.title}
                                 </h4>
-                                <div style={{ 
-                                    display: 'flex', 
-                                    flexWrap: 'wrap', 
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
                                     gap: '0.6rem',
                                     alignItems: 'center',
                                 }}>
@@ -379,7 +379,7 @@ const BentoGrid = () => {
                         {[
                             { icon: <Github size={20} />, label: 'GITHUB', href: 'https://github.com/ajayamal' },
                             { icon: <Linkedin size={20} />, label: 'LINKEDIN', href: 'https://linkedin.com/in/ajay-amal-95554912a' },
-                            { icon: <Mail size={20} />, label: 'EMAIL', href: 'mailto:ajayamal@example.com' },
+                            { icon: <Mail size={20} />, label: 'EMAIL', href: 'mailto:ajayamalprof@gmail.com' },
                         ].map(s => (
                             <a
                                 key={s.label}
